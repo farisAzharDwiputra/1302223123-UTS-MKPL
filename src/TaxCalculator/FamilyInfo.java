@@ -27,7 +27,7 @@ public class FamilyInfo {
         childIds.add(id);
     }
 
-    public boolean isSingle() {
+    public boolean isMarried() {
         return spouseIdNumber == null || spouseIdNumber.isEmpty();
     }
 
