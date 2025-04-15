@@ -16,24 +16,10 @@ public class SalaryInfo {
     private LocalDate joinDate;
     private int monthlySalary, otherMonthlyIncome, annualDeductible;
 
-public void setMonthlySalaryByGrade(int grade,boolean isForeigner) {	
-    if (grade == 1) {
-		monthlySalary = 3000000;
-		if (isForeigner) {
-			monthlySalary = (int) (3000000 * 1.5);
-		}
-    }else if (grade == 2) {
-		monthlySalary = 5000000;
-		if (isForeigner) {
-			monthlySalary = (int) (3000000 * 1.5);
-		}
-    }else if (grade == 3) {
-		monthlySalary = 7000000;
-		if (isForeigner) {
-			monthlySalary = (int) (3000000 * 1.5);
-		}
+    public void setMonthlySalaryByGrade(int grade, boolean isForeigner) {
+        int[] salaries = {0, 3000000, 5000000, 7000000};
+        monthlySalary = (int) (salaries[grade] * (isForeigner ? 1.5 : 1.0));
     }
-}
 
     public int calculateMonthsWorked() {
         LocalDate now = LocalDate.now();
