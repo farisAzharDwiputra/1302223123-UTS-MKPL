@@ -49,7 +49,7 @@ public class Employee {
 
     public int getAnnualIncomeTax() {
         int monthsWorked = salaryInfo.calculateMonthsWorked();
-        EmployeeTaxInfo info = new EmployeeTaxInfo(salaryInfo.getMonthlySalary(), salaryInfo.getOtherMonthlyIncome(), monthsWorked, salaryInfo.getAnnualDeductible(), familyInfo.isSingle(), familyInfo.getChildrenCount());
-        return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, spouseIdNumber.equals(""), childIdNumbers.size());
+        EmployeeTaxInfo info = new EmployeeTaxInfo(salaryInfo.getMonthlySalary(), salaryInfo.getOtherMonthlyIncome(), monthsWorked, salaryInfo.getAnnualDeductible(), familyInfo.isMarried(), familyInfo.getChildrenCount());
+        return TaxFunction.calculateTax(info);
     }
 }
